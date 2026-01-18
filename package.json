@@ -1,0 +1,12 @@
+{
+  "name": "twilio-daily-call",
+  "version": "1.0.0",
+  "description": "Automated daily phone call using Twilio",
+  "main": "auto-call.js",
+  "scripts": {
+    "call": "node auto-call.js"
+  },
+  "dependencies": {
+    "twilio": "^5.0.0"
+  }
+}
