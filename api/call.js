@@ -1,6 +1,13 @@
 const twilio = require('twilio');
 
 export default async function handler(req, res) {
+  const now = new Date();
+  const endDate = new Date('2026-01-31T00:00:00Z');
+  
+  if (now >= endDate) {
+    return res.status(200).json({ skipped: true, reason: 'Past end date (Jan 30)' });
+  }
+
   const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
   
   try {
