@@ -2,7 +2,7 @@ name: Daily Call
 
 on:
   schedule:
-    - cron: '50 17 * * *'  # 18:50 Brussels time (UTC+1)
+    - cron: '20 18 * * *'  # 19:20 Brussels time (UTC+1)
   workflow_dispatch:
 
 jobs:
