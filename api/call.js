@@ -14,7 +14,8 @@ export default async function handler(req, res) {
     const call = await client.calls.create({
       to: process.env.TWILIO_TO_NUMBER,
       from: process.env.TWILIO_FROM_NUMBER,
-      twiml: '<Response><Pause length="3"/><Hangup/></Response>'
+      timeout: 10,
+      twiml: '<Response><Hangup/></Response>'
     });
     res.status(200).json({ success: true, callSid: call.sid });
   } catch (err) {
